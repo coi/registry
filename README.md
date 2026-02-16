@@ -1,6 +1,11 @@
+<div align="center">
+    <img src="images/logo.svg" alt="Coi Registry Logo" width="265"/>
+
 # Coi Library Registry
 
-This repository stores the community library index for Coi libraries.
+Community library index for Coi.
+
+</div>
 
 If you want to create a new library first, see Getting Started:
 
