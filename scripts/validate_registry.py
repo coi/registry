@@ -48,7 +48,7 @@ def http_json(url: str, token: str | None) -> dict:
 
 def validate_release(release: dict, package_name: str, rel_idx: int, seen_versions: set[str]) -> None:
     """Validate a single release entry within a package."""
-    required = ["version", "compiler-drop", "releasedAt"]
+    required = ["version", "compiler-drop", "releasedAt", "source"]
     for key in required:
         if key not in release:
             fail(f"{package_name}: release[{rel_idx}] missing '{key}'")
@@ -80,15 +80,16 @@ def validate_release(release: dict, package_name: str, rel_idx: int, seen_versio
         fail(f"{package_name}: release[{rel_idx}].compiler-drop.tested-on must be >= min")
 
     source = release.get("source")
-    if source is not None:
-        if not isinstance(source, dict):
-            fail(f"{package_name}: release[{rel_idx}].source must be an object")
-        commit = source.get("commit")
-        sha256 = source.get("sha256")
-        if commit is not None and (not isinstance(commit, str) or not COMMIT_RE.match(commit)):
-            fail(f"{package_name}: release[{rel_idx}].source.commit must be a 40-char hex string")
-        if sha256 is not None and (not isinstance(sha256, str) or not SHA256_RE.match(sha256)):
-            fail(f"{package_name}: release[{rel_idx}].source.sha256 must be a 64-char hex string")
+    if not isinstance(source, dict):
+        fail(f"{package_name}: release[{rel_idx}].source must be an object")
+
+    commit = source.get("commit")
+    sha256 = source.get("sha256")
+
+    if not isinstance(commit, str) or not COMMIT_RE.match(commit):
+        fail(f"{package_name}: release[{rel_idx}].source.commit must be a 40-char hex string")
+    if not isinstance(sha256, str) or not SHA256_RE.match(sha256):
+        fail(f"{package_name}: release[{rel_idx}].source.sha256 must be a 64-char hex string")
 
 
 def validate_package_file(package_path: Path, offline: bool, token: str | None) -> None:

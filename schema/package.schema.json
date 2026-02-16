@@ -60,7 +60,7 @@
     "release": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["version", "compiler-drop", "releasedAt"],
+      "required": ["version", "compiler-drop", "releasedAt", "source"],
       "properties": {
         "version": {
           "type": "string",

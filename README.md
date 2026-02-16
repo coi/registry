@@ -52,7 +52,8 @@ Each release contains:
 - `version`: semver (e.g. `1.0.0`, `0.2.1-beta`)
 - `compiler-drop.min`: optimistic minimum supported compiler drop
 - `compiler-drop.tested-on`: compiler drop actually tested
-- `source`: optional commit/sha256 for pinning
+- `source.commit`: pinned git commit SHA (required)
+- `source.sha256`: SHA256 hash of that commit tarball (required)
 - `releasedAt`: release date
 
 ## Validate locally
