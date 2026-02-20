@@ -9,8 +9,8 @@ Community package index for Coi.
 
 If you want to create a new package first, see Getting Started:
 
-- [Create a package (Coi Getting Started)](https://github.com/io-eric/coi/blob/main/docs/getting-started.md)
-- [Coi Versioning (Pond & Drop)](https://github.com/io-eric/coi/blob/main/docs/versioning.md)
+- [Create a package (Coi Getting Started)](https://github.com/coi/coi/blob/main/docs/getting-started.md)
+- [Coi Versioning (Pond & Drop)](https://github.com/coi/coi/blob/main/docs/versioning.md)
 
 ## Structure
 
