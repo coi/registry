@@ -20,7 +20,7 @@ registry/
 │   └── ...                  # Optional staging area (drop package.json here first)
 ├── packages/
 │   ├── coi/
-│   │   └── supabase.json  # Scoped package file (coi/supabase)
+│   │   └── pdf.json       # Scoped package file (coi/pdf)
 │   └── ...
 └── schema/
     └── package.schema.json   # Schema for package files
