@@ -12,6 +12,18 @@
   ],
   "releases": [
     {
+      "version": "0.2.0",
+      "compiler": {
+        "pond": 0,
+        "min-drop": 579
+      },
+      "source": {
+        "commit": "b3b91cc3c4f54508fe7c0b6a70dc108b4d362641",
+        "sha256": "57d29fd988d87fd700e9397b73f7b89ef8cee0391582611b40de5dcd1505d244"
+      },
+      "releasedAt": "2026-10-25"
+    },
+    {
       "version": "0.1.0",
       "compiler": {
         "pond": 0,
